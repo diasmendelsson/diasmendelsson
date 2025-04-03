@@ -1,8 +1,18 @@
 'use client'
 import Image from "next/image"
 import { Fade as Hamburger } from 'hamburger-react'
+import { useState } from "react"
+import Navbar from "./Navbar"
 
 export default function Header() {
+
+    const [isOpen, setOpen ] = useState(false)
+
+    const onToggled = () =>{
+
+        setOpen(!isOpen)
+    }
+
     return (
 
     <header className="h-14 items-center px-4 py-12 flex justify-between">
@@ -18,7 +28,7 @@ export default function Header() {
             <p className="text-xl font-extralight uppercase tracking-wide">Desenvolvedor Web</p>
         </div>
 
-        <Hamburger rounded color="#0050ff"/>
+        <Navbar />
     </header>
     )
 }
